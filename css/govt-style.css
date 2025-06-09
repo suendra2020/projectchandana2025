@@ -423,7 +423,12 @@ nav {
     position: relative;
     z-index: 1;
 }
-
+.p-2{
+   padding: 10px;
+    /* margin: 10px; */
+    background: #fff;
+    border: 1px solid #ededed;
+}
 .page-banner h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -432,7 +437,7 @@ nav {
 .page-title{
     
 }
-.container h1, .container h2{
+.container h1, .container h2,.card-title{
 color: var(--primary-color);
 }
 /* Section Styles */
@@ -1037,4 +1042,10 @@ table tr:nth-child(even) {
   100% {
     transform: translateX(-100%);
   }
+}
+
+
+
+.social-links .fa-brands, .fab{
+    color: #fff;
 }

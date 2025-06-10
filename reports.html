@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project CHAnDAnA - Reports</title>
+    <link rel="stylesheet" href="css/govt-style.css">
+    <link rel="stylesheet" href="css/partners.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .report-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .report-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .report-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .report-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .report-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .report-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        .report-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .report-meta i {
+            margin-right: 5px;
+        }
+        
+        .report-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .report-actions .btn {
+            flex: 1;
+            text-align: center;
+            padding: 8px 12px;
+        }
+        
+        .report-filters {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .filter-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+    </style>
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to Main Content Link for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span>Government of Karnataka</span>
+                </div>
+                <div class="top-bar-right">
+                    <div class="font-size-controls" aria-label="Change font size">
+                        <span>Text Size:</span>
+                        <button class="font-size-btn" id="decrease-font" aria-label="Decrease font size">A-</button>
+                        <button class="font-size-btn" id="default-font" aria-label="Default font size">A</button>
+                        <button class="font-size-btn" id="increase-font" aria-label="Increase font size">A+</button>
+                    </div>
+                    <a href="#" aria-label="Site Map">Site Map</a>
+                    <a href="#" aria-label="Accessibility Statement">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">
+                    <img src="images/nsa.svg" alt="National Sickle Cell Anemia Elimination Mission Logo" width="80" height="80">
+                    <div class="logo-text">
+                        <h1>PROJECT CHAnDAnA</h1>
+                        <p>National Sickle Cell Anemia Elimination Mission</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <label for="search" class="visually-hidden">Search</label>
+                        <input type="text" id="search" placeholder="Search..." aria-label="Search">
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="helpline">
+                        <a href="tel:08022358910" aria-label="Call helpline">
+                            <i class="fas fa-phone-alt"></i>
+                            <span><b>Helpline<b/> 080-22358910</span>
+                        </a>
+                    </div>
+                    <div class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="main-nav" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="teams.html">Teams</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="reports.html" class="active" aria-current="page">Reports</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Reports</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+            <h1 class="page-title">Reports & Publications</h1>
+            
+            <section class="reports-intro">
+                <p>Project CHAnDAnA regularly publishes reports, research papers, and other publications related to Sickle Cell Anemia in Karnataka. These documents provide valuable insights into our work, findings, and impact.</p>
+            </section>
+            
+            <!-- <section class="report-filters">
+                <h2>Filter Reports</h2>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="report-type">Report Type</label>
+                        <select id="report-type" name="report-type">
+                            <option value="all">All Types</option>
+                            <option value="progress">Progress Reports</option>
+                            <option value="research">Research Papers</option>
+                            <option value="case-studies">Case Studies</option>
+                            <option value="policy">Policy Briefs</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="report-district">District</label>
+                        <select id="report-district" name="report-district">
+                            <option value="all">All Districts</option>
+                            <option value="mysuru">Mysuru</option>
+                            <option value="kodagu">Kodagu</option>
+                            <option value="chamarajanagar">Chamarajanagar</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="report-year">Year</label>
+                        <select id="report-year" name="report-year">
+                            <option value="all">All Years</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn btn-outline">Reset Filters</button>
+                    <button class="btn btn-primary">Apply Filters</button>
+                </div>
+            </section> -->
+            
+            <section class="reports-grid">
+                <div class="row">
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="report-card">
+                            <!-- <img src="images/reports.png" alt="Annual Progress Report 2024" class="report-image"> -->
+                            <div class="report-content">
+                                <div class="report-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> March 2025</span>
+                                    <span><i class="fas fa-file-pdf"></i> PDF</span>
+                                </div>
+                                <h3>Annual Progress Report 2024</h3>
+                                <p>Comprehensive overview of Project CHAnDAnA's activities, achievements, and impact during the year 2024. Includes detailed statistics on screening, treatment, and awareness programs.</p>
+                                <div class="report-actions">
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="report-card">
+                            <img src="images/reports.png" alt="Prevalence Study: Mysuru District" class="report-image">
+                            <div class="report-content">
+                                <div class="report-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> December 2024</span>
+                                    <span><i class="fas fa-file-pdf"></i> PDF</span>
+                                </div>
+                                <h3>Prevalence Study: Mysuru District</h3>
+                                <p>Research paper on the prevalence of Sickle Cell Anemia in tribal populations of Mysuru district. Includes demographic analysis, risk factors, and recommendations for intervention.</p>
+                                <div class="report-actions">
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="report-card">
+                            <img src="images/reports.png" alt="HPOS Technology: Impact Assessment" class="report-image">
+                            <div class="report-content">
+                                <div class="report-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> October 2024</span>
+                                    <span><i class="fas fa-file-pdf"></i> PDF</span>
+                                </div>
+                                <h3>HPOS Technology: Impact Assessment</h3>
+                                <p>Evaluation of the effectiveness of the HPOS device for rapid diagnosis of Sickle Cell Anemia in field settings. Includes comparison with traditional diagnostic methods.</p>
+                                <div class="report-actions">
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="report-card">
+                            <img src="images/reports.png" alt="Community Awareness Impact Study" class="report-image">
+                            <div class="report-content">
+                                <div class="report-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> August 2024</span>
+                                    <span><i class="fas fa-file-pdf"></i> PDF</span>
+                                </div>
+                                <h3>Community Awareness Impact Study</h3>
+                                <p>Analysis of the effectiveness of community awareness programs in increasing knowledge about Sickle Cell Anemia and promoting early screening.</p>
+                                <div class="report-actions">
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="report-card">
+                            <img src="images/reports.png" alt="Healthcare Worker Training Evaluation" class="report-image">
+                            <div class="report-content">
+                                <div class="report-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> June 2024</span>
+                                    <span><i class="fas fa-file-pdf"></i> PDF</span>
+                                </div>
+                                <h3>Healthcare Worker Training Evaluation</h3>
+                                <p>Assessment of the effectiveness of training programs for healthcare workers in improving their knowledge and skills related to Sickle Cell Anemia management.</p>
+                                <div class="report-actions">
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="report-card">
+                            <img src="images/reports.png" alt="Policy Brief: Sickle Cell Anemia in Karnataka" class="report-image">
+                            <div class="report-content">
+                                <div class="report-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> April 2024</span>
+                                    <span><i class="fas fa-file-pdf"></i> PDF</span>
+                                </div>
+                                <h3>Policy Brief: Sickle Cell Anemia in Karnataka</h3>
+                                <p>Recommendations for policy interventions to address Sickle Cell Anemia in Karnataka, based on Project CHAnDAnA's findings and experiences.</p>
+                                <div class="report-actions">
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="pagination-section">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+            
+            <section class="partners-section">
+                <h2>Our Research Partners</h2>
+                <div class="partners-logo-container">
+                    <div class="partner-logo">
+                        <img src="images/nsa.svg" alt="National Sickle Cell Anemia Elimination Mission">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/karnataka-logo.png" alt="Government of Karnataka">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/indianoil-logo.png" alt="IndianOil Aarogyam">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/iisc-logo.png" alt="Indian Institute of Science">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Department of Health and Family Welfare,<br>Government of Karnataka,<br>Bengaluru - 560001</p>
+                        <p><i class="fas fa-phone-alt"></i> Helpline: 080-22358910</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:"></a></p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Project CHAnDAnA. All Rights Reserved.</p>
+                <p>This website is maintained by the Department of Health and Family Welfare, Government of Karnataka</p>
+                <div class="footer-links">
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Copyright Policy</a>
+                    <a href="#">Hyperlinking Policy</a>
+                    <a href="#">Accessibility Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/accessibility.js"></script>
+</body>
+</html>

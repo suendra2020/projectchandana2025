@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project CHAnDAnA - About Us</title>
+    <link rel="stylesheet" href="css/govt-style.css">
+    <link rel="stylesheet" href="css/partners.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .timeline-section {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline-container {
+            position: relative;
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: 22px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .timeline-content .date {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-image {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+                top: 15px;
+            }
+            
+            .timeline-item:nth-child(even)::after {
+                left: 18px;
+            }
+        }
+
+
+
+
+        /*chronological order*/
+        .timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .event {
+      display: flex;
+      gap: 1rem;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      align-items: flex-start;
+    }
+
+    .circle {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+    }
+
+    .event-content {
+      flex-grow: 1;
+    }
+
+    .event-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+    }
+
+    .event-date {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-description {
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    /* Color classes */
+    .peach { background: #ffe2d3; }
+    .purple { background: #e8d9f5; }
+    .blue { background: #cde8ef; }
+    .yellow { background: #fff7cd; }
+    .pink { background: #fcd4e0; }
+    .red { background: #fbe2df; }
+    .indigo { background: #d8d2f0; }
+    .cyan { background: #d4f3f3; }
+    .green { background: #d3eed4; }
+    .sky { background: #caecf7; }
+    .orange { background: #fff1d6; }
+
+    @media (max-width: 768px) {
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+    </style>
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to Main Content Link for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span>Government of Karnataka</span>
+                </div>
+                <div class="top-bar-right">
+                    <div class="font-size-controls" aria-label="Change font size">
+                        <span>Text Size:</span>
+                        <button class="font-size-btn" id="decrease-font" aria-label="Decrease font size">A-</button>
+                        <button class="font-size-btn" id="default-font" aria-label="Default font size">A</button>
+                        <button class="font-size-btn" id="increase-font" aria-label="Increase font size">A+</button>
+                    </div>
+                    <a href="#" aria-label="Site Map">Site Map</a>
+                    <a href="#" aria-label="Accessibility Statement">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">
+                    <img src="images/nsa.svg" alt="National Sickle Cell Anemia Elimination Mission Logo" width="80" height="80">
+                    <div class="logo-text">
+                        <h1>PROJECT CHAnDAnA</h1>
+                        <p>National Sickle Cell Anemia Elimination Mission</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <label for="search" class="visually-hidden">Search</label>
+                        <input type="text" id="search" placeholder="Search..." aria-label="Search">
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="helpline">
+                        <a href="tel:08022358910" aria-label="Call helpline">
+                            <i class="fas fa-phone-alt"></i>
+                            <span><b></b>Helpline<b/> 080-22358910</span>
+                        </a>
+                    </div>
+                    <div class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="main-nav" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="teams.html">Teams</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>About Us</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+            <h1 class="page-title">About Project CHAnDAnA</h1>
+            
+            <section class="about-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Our Mission</h2>
+                        <p>Project CHAnDAnA (Comprehensive Healthcare Advancement for Neglected Disease Awareness) is a pioneering initiative focused on addressing Sickle Cell Anemia in Karnataka, particularly in the districts of Mysore, Chamarajanagar, and Kodagu.</p>
+                        <p>Our mission is to improve healthcare outcomes for individuals affected by Sickle Cell Anemia through early detection, comprehensive treatment, and community education.</p>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <img src="images/about us.png" alt="About Project CHAnDAnA" class="img-fluid rounded">
+                    </div> -->
+                </div>
+            </section>
+            
+            <section class="timeline-section">
+                <h2 class="text-center mb-4">Our Journey (Chronological Order)</h2>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Project Inception</h3>
+                            <p class="date">January 2022</p>
+                            <!-- <img src="images/chandana-Home-Page.png" alt="Project Inception" class="timeline-image"> -->
+                            <p>Project CHAnDAnA was officially launched as a collaborative initiative between the National Health Mission, Indian Institute of Science, Government of Karnataka, and Indian Oil Corporation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Baseline Studies</h3>
+                            <p class="date">June 2022</p>
+                            <!-- <img src="images/activities.png" alt="Baseline Studies" class="timeline-image"> -->
+                            <p>Comprehensive baseline studies were conducted across the three target districts to understand the prevalence of Sickle Cell Anemia and identify high-risk communities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Healthcare Worker Training</h3>
+                            <p class="date">December 2022</p>
+                            <!-- <img src="images/training/healthcare-training.jpg" alt="Healthcare Worker Training" class="timeline-image"> -->
+                            <p>Training programs were initiated for local healthcare workers to improve diagnosis and management of Sickle Cell Anemia in rural settings.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Community Outreach</h3>
+                            <p class="date">March 2023</p>
+                            <!-- <img src="images/events.jpg" alt="Community Outreach" class="timeline-image"> -->
+                            <p>Large-scale community outreach programs were launched to raise awareness about Sickle Cell Anemia and promote early screening.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Research Collaboration</h3>
+                            <p class="date">September 2023</p>
+                            <!-- <img src="images/chandana-our team.jpg" alt="Research Collaboration" class="timeline-image"> -->
+                            <p>Research partnerships were established with national and international institutions to develop innovative approaches to Sickle Cell Anemia management.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Expansion Phase</h3>
+                            <p class="date">January 2024</p>
+                            <!-- <img src="images/vison-page.png" alt="Expansion Phase" class="timeline-image"> -->
+                            <p>Project CHAnDAnA expanded its scope to include additional vulnerable communities and implement comprehensive healthcare services.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="timeline">
+    <div class="event">
+      <div class="circle peach">1</div>
+      <div class="event-content">
+        <div class="event-title">MOU Signed</div>
+        <div class="event-date">12 MAR 2024</div>
+        <div class="event-description">IOCL (CSR funding), IISc (tech expertise), and GoK joined hands to fight Sickle Cell Disease.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle purple">2</div>
+      <div class="event-content">
+        <div class="event-title">Official Launch</div>
+        <div class="event-date">12 MAR 2024</div>
+        <div class="event-description">The initiative officially launched to eliminate Sickle Cell Disease in tribal and rural regions of Karnataka.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle blue">3</div>
+      <div class="event-content">
+        <div class="event-title">Device Deployment</div>
+        <div class="event-date">18 JUN – 18 SEP 2024</div>
+        <div class="event-description">Training of 200 MOs, 700 CHOs, and 2000 ASHA workers to conduct screening.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle yellow">4</div>
+      <div class="event-content">
+        <div class="event-title">Community Awareness Drives</div>
+        <div class="event-date">29 JUN 2024 – 23 MAR 2025</div>
+        <div class="event-description">Educational activities across 18 taluks to raise awareness about Sickle Cell Disease.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle pink">5</div>
+      <div class="event-content">
+        <div class="event-title">Mobile Vans Flag-off</div>
+        <div class="event-date">21 JUN 2024</div>
+        <div class="event-description">Mobile units sent to 3 districts to support outreach efforts.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle red">6</div>
+      <div class="event-content">
+        <div class="event-title">Command Center Inauguration</div>
+        <div class="event-date">11 Nov 2024</div>
+        <div class="event-description">Central hub set up to coordinate tracking, data, and logistics.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle indigo">7</div>
+      <div class="event-content">
+        <div class="event-title">CM Program & Report</div>
+        <div class="event-date">12 Nov 2024</div>
+        <div class="event-description">CM showcases progress at HD Kote & Mysuru; screening in tribal areas.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle cyan">8</div>
+      <div class="event-content">
+        <div class="event-title">HPLC handover to Chamarajanagar</div>
+        <div class="event-date">12 Dec 2024</div>
+        <div class="event-description">Advanced testing device deployed; training provided to PG and HOD.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle green">9</div>
+      <div class="event-content">
+        <div class="event-title">HPLC Device Handover</div>
+        <div class="event-date">25 Feb 2025</div>
+        <div class="event-description">Delivered to Kodagu District Hospital for precision diagnostics.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle sky">10</div>
+      <div class="event-content">
+        <div class="event-title">ASHA Worker Incentives</div>
+        <div class="event-date">28 Mar 2025</div>
+        <div class="event-description">Incentives provided for their contribution to screening and follow-up.</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="circle orange">11</div>
+      <div class="event-content">
+        <div class="event-title">Digital ID & Counseling Cards</div>
+        <div class="event-date">Apr 2025</div>
+        <div class="event-description">Video-based digital counseling & ID cards introduced for support.</div>
+      </div>
+    </div>
+  </div>
+            </section>
+            
+            <section class="about-section">
+                <h2>Our Approach</h2>
+                <p>Project CHAnDAnA takes a holistic approach to addressing Sickle Cell Anemia through:</p>
+                <div class="row">
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Early Detection</h3>
+                                <p class="card-text">Implementing screening programs in vulnerable communities to identify individuals with Sickle Cell Anemia at an early stage.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Treatment Access</h3>
+                                <p class="card-text">Ensuring access to quality healthcare services and treatments for affected individuals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 p-2">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Community Education</h3>
+                                <p class="card-text">Raising awareness about Sickle Cell Anemia through educational programs and community outreach.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="partners" class="about-section">
+                <h2>Our Partners</h2>
+                <p>Project CHAnDAnA is a collaborative effort between government agencies, academic institutions, and corporate partners:</p>
+                <div class="partners-logo-container">
+                    <div class="partner-logo">
+                        <img src="images/nsa.svg" alt="National Sickle Cell Anemia Elimination Mission">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/karnataka-logo.png" alt="Government of Karnataka">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/indianoil-logo.png" alt="IndianOil Aarogyam">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/iisc-logo.png" alt="Indian Institute of Science">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Department of Health and Family Welfare,<br>Government of Karnataka,<br>Bengaluru - 560001</p>
+                        <p><i class="fas fa-phone-alt"></i> Helpline: 080-22358910</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:"></a></p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Project CHAnDAnA. All Rights Reserved.</p>
+                <p>This website is maintained by the Department of Health and Family Welfare, Government of Karnataka</p>
+                <div class="footer-links">
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Copyright Policy</a>
+                    <a href="#">Hyperlinking Policy</a>
+                    <a href="#">Accessibility Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/accessibility.js"></script>
+</body>
+</html>

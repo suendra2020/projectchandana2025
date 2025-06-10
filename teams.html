@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project CHAnDAnA - Teams</title>
+    <link rel="stylesheet" href="css/govt-style.css">
+    <link rel="stylesheet" href="css/partners.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .team-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .team-info .designation {
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .team-category {
+            margin-bottom: 40px;
+        }
+        
+        .team-category h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+
+
+        /* teams 8*/
+       .collapsible {
+      /* background: linear-gradient(90deg, #1c8f5f, #68b283); */
+      color: white;
+      padding: 15px;
+      border: none;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .collapsible:after {
+      content: '+';
+      font-size: 1.5rem;
+    }
+    .collapsible.active:after {
+      content: '-';
+    }
+    .content {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: white;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+    .content.open {
+      padding: 20px 15px;
+      max-height: 2000px;
+      transition: max-height 0.5s ease-in;
+    }
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .person-card {
+      background: #f0f8f6;
+      border-radius: 8px;
+      padding: 10px;
+      flex: 1 1 150px;
+      text-align: center;
+      min-width: 130px;
+    }
+    .person-card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+    .person-name { font-weight: bold; margin-bottom: 2px; }
+    .person-role { font-size: 0.85rem; color: #444; }
+
+    @media (max-width: 768px) {
+      .team-grid { flex-direction: column; align-items: center; }
+    }
+
+    .person-card img{
+        /* Ellipse 9 */
+
+
+
+background: linear-gradient(0deg, #E4E4E4, #E4E4E4), url(Checker.png);
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+
+    }
+    .team-gridone{
+        
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+    </style>
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to Main Content Link for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span>Government of Karnataka</span>
+                </div>
+                <div class="top-bar-right">
+                    <div class="font-size-controls" aria-label="Change font size">
+                        <span>Text Size:</span>
+                        <button class="font-size-btn" id="decrease-font" aria-label="Decrease font size">A-</button>
+                        <button class="font-size-btn" id="default-font" aria-label="Default font size">A</button>
+                        <button class="font-size-btn" id="increase-font" aria-label="Increase font size">A+</button>
+                    </div>
+                    <a href="#" aria-label="Site Map">Site Map</a>
+                    <a href="#" aria-label="Accessibility Statement">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">
+                    <img src="images/nsa.svg" alt="National Sickle Cell Anemia Elimination Mission Logo" width="80" height="80">
+                    <div class="logo-text">
+                        <h1>PROJECT CHAnDAnA</h1>
+                        <p>National Sickle Cell Anemia Elimination Mission</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <label for="search" class="visually-hidden">Search</label>
+                        <input type="text" id="search" placeholder="Search..." aria-label="Search">
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="helpline">
+                        <a href="tel:08022358910" aria-label="Call helpline">
+                            <i class="fas fa-phone-alt"></i>
+                            <span><b>Helpline<b/> 080-22358910</span>
+                        </a>
+                    </div>
+                    <div class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="main-nav" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="teams.html" class="active" aria-current="page">Teams</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Teams</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+            <h1 class="page-title">Our Team</h1>
+            
+            <section class="team-intro">
+                <p>Project CHAnDAnA brings together experts from various fields to address Sickle Cell Anemia in Karnataka. Our team consists of dedicated professionals from healthcare, research, community outreach, and administration who work collaboratively to achieve our mission.</p>
+            </section>
+            
+            <section class="team-category" id="leadership">
+                <h2>Leadership Team</h2>
+                <div class="team-grid team-gridone">
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Dr. Rajesh Kumar" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Dr. Rajesh Kumar</h3>
+                            <span class="designation">Project Director</span>
+                            <p>Dr. Kumar leads the overall strategic direction of Project CHAnDAnA, bringing over 20 years of experience in public health initiatives.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Dr. Priya Sharma" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Dr. Priya Sharma</h3>
+                            <span class="designation">Medical Director</span>
+                            <p>Dr. Sharma oversees all medical aspects of the project, including screening protocols, treatment guidelines, and healthcare provider training.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Mr. Venkatesh Murthy" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Mr. Venkatesh Murthy</h3>
+                            <span class="designation">Administrative Director</span>
+                            <p>Mr. Murthy manages the administrative and financial aspects of Project CHAnDAnA, ensuring efficient resource allocation and operational excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="team-category" id="research">
+                <h2>Research Team</h2>
+                <div class="team-grid team-gridone">
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Dr. Anand Rao" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Dr. Anand Rao</h3>
+                            <span class="designation">Lead Researcher</span>
+                            <p>Dr. Rao leads the research initiatives, focusing on developing innovative approaches to Sickle Cell Anemia diagnosis and treatment.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Dr. Meena Kumari" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Dr. Meena Kumari</h3>
+                            <span class="designation">Epidemiologist</span>
+                            <p>Dr. Kumari studies the patterns, causes, and effects of Sickle Cell Anemia in the target populations, informing our strategic interventions.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Dr. Suresh Babu" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Dr. Suresh Babu</h3>
+                            <span class="designation">Technology Innovation Lead</span>
+                            <p>Dr. Babu leads the development of the HPOS device for rapid on-the-spot diagnosis of Sickle Cell Anemia.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="team-category" id="field">
+                <h2>Field Team</h2>
+                <div class="team-grid team-gridone">
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Ms. Lakshmi Devi" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Ms. Lakshmi Devi</h3>
+                            <span class="designation">Community Outreach Coordinator</span>
+                            <p>Ms. Devi coordinates community engagement activities, ensuring effective communication and participation from local communities.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Mr. Ramesh Gowda" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Mr. Ramesh Gowda</h3>
+                            <span class="designation">Field Operations Manager</span>
+                            <p>Mr. Gowda manages the logistics and operations of field activities, including screening camps and awareness programs.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <!-- <img src="images/chandana-our team.jpg" alt="Dr. Kavitha Naik" class="team-image"> -->
+                        <div class="team-info">
+                            <h3>Dr. Kavitha Naik</h3>
+                            <span class="designation">Training Coordinator</span>
+                            <p>Dr. Naik develops and implements training programs for healthcare providers and community health workers.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <div class="section">
+    <div class="role-header">1. Leadership</div>
+    <div class="team-grid">
+      <div class="person-card">
+        <img src="https://via.placeholder.com/70" alt="Prof. Sai Siva Gorthi">
+        <div class="person-name">Prof. Sai Siva Gorthi</div>
+        <div class="person-role">Principal Investigator<br/>IISc, Bangalore</div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- * team section*/ -->
+    <h1>Project CHAnDAnA</h1>
+
+  <button class="collapsible active">1. Leadership</button>
+  <div class="content open">
+    <div class="team-grid">
+      <div class="person-card">
+        <img src="https://via.placeholder.com/70" alt="Prof. Sai Siva Gorthi">
+        <div class="person-name">Prof. Sai Siva Gorthi</div>
+        <div class="person-role">Principal Investigator<br/>IISc, Bangalore</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="collapsible">2. Project Management Team</button>
+  <div class="content">
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Rehan Shahed</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Pradhyumma</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">GM Shrishail</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Chandan Adhikari</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Tejaswini S B</div></div>
+    </div>
+  </div>
+
+  <button class="collapsible">3. Project Execution Team</button>
+  <div class="content">
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Anitha</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Sathyanarayana</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prasath</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Ashraf</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Rayees</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prajwal</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prasanna</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Abhishek</div></div>
+    </div>
+  </div>
+
+  <button class="collapsible">4. Project Field Team</button>
+  <div class="content">
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Mr. Nagaraju</div></div>
+    </div>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Akhila</div><div class="person-role">PHP</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Pooja</div><div class="person-role">Program Assistant</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Aiyyappa</div><div class="person-role">Field Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Puttabasaviah</div><div class="person-role">Field Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Venkatesh Murthy</div><div class="person-role">Field Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Darshini</div><div class="person-role">PHP</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Vinuraj</div><div class="person-role">Program Assistant</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Yogesh</div><div class="person-role">Field Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Santosh</div><div class="person-role">Field Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Srinivas</div><div class="person-role">Field Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Mamtha</div><div class="person-role">PHP</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Siddaraju</div><div class="person-role">Field Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Rakesh</div><div class="person-role">Field Co-ordinator</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="role-header">2. Project Management Team</div>
+    <h2>Public Health Professionals</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Rehan Shahed</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Pradhyumma</div></div>
+    </div>
+    <h2>Project Associate</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">GM Shrishail</div></div>
+    </div>
+    <h2>Program Assistant</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Chandan Adhikari</div></div>
+    </div>
+    <h2>Administrative Assistant</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Tejaswini S B</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="role-header">3. Project Execution Team</div>
+    <h2>IEC Activities Team</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Anitha</div></div>
+    </div>
+    <h2>Command Center & Quality Testing Lab</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Sathyanarayana</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prasath</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Ashraf</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Rayees</div></div>
+    </div>
+    <h2>Field Technicians</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prajwal</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prasanna</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Abhishek</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="role-header">4. Project Field Team</div>
+    <h2>Field Ops Manager</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Mr. Nagaraju</div></div>
+    </div>
+    <h2>Mysuru Team</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Akhila</div><div class="person-role">PHP</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Pooja</div><div class="person-role">Program Assistant</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Aiyyappa</div><div class="person-role">Filed Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Puttabasaviah</div><div class="person-role">Filed Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Venkatesh Murthy</div><div class="person-role">Filed Co-ordinator</div></div>
+    </div>
+    <h2>Chamarajanagar Team</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Darshini</div><div class="person-role">PHP</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Vinuraj</div><div class="person-role">Program Assistant</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Yogesh</div><div class="person-role">Filed Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Santosh</div><div class="person-role">Filed Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Srinivas</div><div class="person-role">Filed Co-ordinator</div></div>
+    </div>
+    <h2>Kodagu Team</h2>
+    <div class="team-grid">
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Mamtha</div><div class="person-role">PHP</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Siddaraju</div><div class="person-role">Filed Co-ordinator</div></div>
+      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Rakesh</div><div class="person-role">Filed Co-ordinator</div></div>
+    </div>
+  </div>
+            
+            <section class="partners-section">
+                <h2>Our Partner Organizations</h2>
+                <div class="partners-logo-container">
+                    <div class="partner-logo">
+                        <img src="images/nsa.svg" alt="National Sickle Cell Anemia Elimination Mission">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/karnataka-logo.png" alt="Government of Karnataka">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/indianoil-logo.png" alt="IndianOil Aarogyam">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/iisc-logo.png" alt="Indian Institute of Science">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Department of Health and Family Welfare,<br>Government of Karnataka,<br>Bengaluru - 560001</p>
+                        <p><i class="fas fa-phone-alt"></i> Helpline: 080-22358910</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:"></a></p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Project CHAnDAnA. All Rights Reserved.</p>
+                <p>This website is maintained by the Department of Health and Family Welfare, Government of Karnataka</p>
+                <div class="footer-links">
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Copyright Policy</a>
+                    <a href="#">Hyperlinking Policy</a>
+                    <a href="#">Accessibility Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/accessibility.js"></script>
+      <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+
+    collapsibles.forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        content.classList.toggle("open");
+      });
+    });
+  </script>
+</body>
+</html>

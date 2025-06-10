@@ -1,0 +1,148 @@
+/* Additional CSS for banner flex layout and accessibility improvements */
+.banner-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.banner-text {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-image {
+    flex: 1;
+    text-align: center;
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus styles for better keyboard navigation */
+:focus {
+    outline: 2px solid var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* Text center utility */
+.text-center {
+    text-align: center;
+}
+
+/* Stat growth indicator */
+.stat-growth {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+/* Contact info styles */
+.contact-info {
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+/* Accessibility improvements */
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* High contrast focus indicators */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* Skip link improvements */
+.skip-to-content {
+    background: var(--primary-color);
+    color: var(--text-light);
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%) translateX(-50%);
+    transition: transform 0.3s;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0%) translateX(-50%);
+}
+
+/* Improved button states */
+.btn:hover, .btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved form controls for accessibility */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(10, 36, 99, 0.25);
+}
+
+/* Keyboard accessible dropdown menu */
+.main-menu li {
+    position: relative;
+}
+
+.main-menu li ul {
+    background-color: var(--primary-color);
+    display: none;
+    left: 0;
+    min-width: 200px;
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+}
+
+.main-menu li:hover > ul,
+.main-menu li:focus-within > ul,
+.main-menu li ul:hover,
+.main-menu li ul:focus {
+    display: block;
+}
+
+.main-menu li ul li {
+    width: 100%;
+}
+
+.main-menu li ul li a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    width: 100%;
+}
+
+/* Improved mobile menu accessibility */
+@media (max-width: 768px) {
+    .main-menu.active {
+        display: flex;
+    }
+    
+    .main-menu li ul {
+        position: static;
+        width: 100%;
+        display: none;
+    }
+    
+    .main-menu li.open > ul {
+        display: block;
+    }
+}

@@ -110,12 +110,12 @@
       margin-top: 10px;
     }
     .person-card {
-      background: #f0f8f6;
-      border-radius: 8px;
-      padding: 10px;
-      flex: 1 1 150px;
-      text-align: center;
-      min-width: 130px;
+         background: #f0f8f6;
+    border-radius: 8px;
+    padding: 10px;
+    flex: 1 1 216px;
+    text-align: center;
+    min-width: 130px;
     }
     .person-card img {
       width: 70px;
@@ -151,6 +151,85 @@ box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     gap: 30px;
     margin-top: 30px;
 }
+
+
+.profile-section {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      align-items: center;
+      gap: 20px;
+    }
+    .profile-section img {
+      width: 180px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .profile-text {
+      flex: 1;
+    }
+    .profile-text h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .profile-text h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .profile-text p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .report-box h3 { font-size: 1.4rem; }
+      .profile-section { flex-direction: column; align-items: flex-start; }
+      .profile-section img { width: 100%; max-width: 300px; }
+    }
+
+    .team-regions { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
+    .region-box {
+      flex: 1 1 30%;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      padding: 15px;
+    }
+    .region-box h3 {
+      background: linear-gradient(90deg, #1c8f5f, #68b283);
+      color: white;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .member {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .member img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .member-details {
+      font-size: 0.9rem;
+    }
+    .member-details strong { display: block; }
+
+    @media (max-width: 768px) {
+      .report-grid, .team-regions { flex-direction: column; align-items: stretch; }
+    }
 
     </style>
 <link rel="stylesheet" href="css/responsive.css">
@@ -338,7 +417,7 @@ box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     <div class="role-header">1. Leadership</div>
     <div class="team-grid">
       <div class="person-card">
-        <img src="https://via.placeholder.com/70" alt="Prof. Sai Siva Gorthi">
+        <img src="./images/" alt="Prof. Sai Siva Gorthi">
         <div class="person-name">Prof. Sai Siva Gorthi</div>
         <div class="person-role">Principal Investigator<br/>IISc, Bangalore</div>
       </div>
@@ -352,132 +431,82 @@ box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   <button class="collapsible active">1. Leadership</button>
   <div class="content open">
     <div class="team-grid">
-      <div class="person-card">
-        <img src="https://via.placeholder.com/70" alt="Prof. Sai Siva Gorthi">
-        <div class="person-name">Prof. Sai Siva Gorthi</div>
-        <div class="person-role">Principal Investigator<br/>IISc, Bangalore</div>
-      </div>
+       <div class="profile-section">
+    <img src="./images/saisiva.png" alt="Prof. Sai Siva Gorthi">
+    <div class="profile-text">
+      <h3>Prof. Sai Siva Gorthi</h3>
+      <h4>Professor at Indian Institute of Science (IISc), Bangalore</h4>
+      <p>
+        Sai Siva Gorthi received the Doctorate degree in optical metrology from the Swiss Federal Institute of Technology (EPFL), Lausanne, Switzerland, in 2010. He is working as an Assistant Professor in the Department of Instrumentation and Applied Physics, Indian Institute of Science (IISc), Bangalore, India.
+        Prior to joining IISc, he was a Postdoctoral Fellow at the Rowland Institute at Harvard University, where he had developed multiple imaging modalities for recording information of fast flowing cells in microfluidic devices. Currently at IISc.
+      </p>
+    </div>
+  </div>
     </div>
   </div>
 
   <button class="collapsible">2. Project Management Team</button>
-  <div class="content">
+  <div class="content open">
     <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Rehan Shahed</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Pradhyumma</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">GM Shrishail</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Chandan Adhikari</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Tejaswini S B</div></div>
+      <div class="person-card"><img src="./images/rehan.png"><div class="person-name">Dr. Rehan Shahed</div></div>
+      <div class="person-card"><img src="./images/pradhyumma.png"><div class="person-name">Dr. Pradhyumma</div></div>
+      <div class="person-card"><img src="./images/shrishail.png"><div class="person-name">GM Shrishail</div></div>
+      <div class="person-card"><img src="./images/chandan.png"><div class="person-name">Chandan Adhikari</div></div>
+      <div class="person-card"><img src="./images/tejaswini.png"><div class="person-name">Tejaswini S B</div></div>
     </div>
   </div>
 
   <button class="collapsible">3. Project Execution Team</button>
   <div class="content">
     <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Anitha</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Sathyanarayana</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prasath</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Ashraf</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Rayees</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prajwal</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prasanna</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Abhishek</div></div>
+      <div class="person-card"><img src="./images/anitha.png"><div class="person-name">Anitha   <br><strong>IEC Activities Team </strong></div></div>
+      <div class="person-card"><img src="./images/sathyanarayana.png"><div class="person-name">Sathyanarayana<br><strong>Command Center & Quality Testing Lab </strong></div></div>
+      <div class="person-card"><img src="./images/prasath.png"><div class="person-name">Prasath<br><strong>Command Center & Quality Testing Lab </strong></div></div>
+      <div class="person-card"><img src="./images/ashraf.png"><div class="person-name">Ashraf<br><strong>Command Center & Quality Testing Lab </strong></div></div>
+      <div class="person-card"><img src="./images/rayees.png"><div class="person-name">Rayees  <br><strong>Command Center & Quality Testing Lab </strong></div></div>
+      <div class="person-card"><img src="./images/prajwal.png"><div class="person-name">Prajwal<br><strong>Field Technicians </strong></div></div>
+      <div class="person-card"><img src="./images/prasanna.png"><div class="person-name">Prasanna<br><strong>Field Technicians </strong></div></div>
+      <div class="person-card"><img src="./images/abhishek.png"><div class="person-name">Abhishek<br><strong>Field Technicians </strong></div></div>
     </div>
   </div>
 
   <button class="collapsible">4. Project Field Team</button>
   <div class="content">
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Mr. Nagaraju</div></div>
+    
+    <div class="team-section">
+ 
+    <div class="member"><img src="https://via.placeholder.com/50"><div class="member-details"><strong>Mr. Nagaraju</strong>Field Ops Manager</div></div>
+    <p style="margin: 10px 0 20px; color: #555;">The Field Team is deployed across three regions:</p>
+    <div class="team-regions">
+      <div class="region-box">
+        <h3>Mysuru</h3>
+        <div class="member"><img src="./images/akhila.png"><div class="member-details"><strong>Dr. Akhila</strong>Public Health Professional</div></div>
+        <div class="member"><img src="./images/pooja.png"><div class="member-details"><strong>Pooja</strong>Program Assistant</div></div>
+        <div class="member"><img src="./images/aiyyappa.png"><div class="member-details"><strong>Aiyyappa</strong>Field Co-ordinator</div></div>
+        <div class="member"><img src="./images/puttabasaviah.png"><div class="member-details"><strong>Puttabasaviah</strong>Field Co-ordinator</div></div>
+        <div class="member"><img src="./images/venkatesh.png"><div class="member-details"><strong>Venkatesh Murthy</strong>Field Co-ordinator</div></div>
+      </div>
+      <div class="region-box">
+        <h3>Chamarajanagar</h3>
+        <div class="member"><img src="./images/darashini.png"><div class="member-details"><strong>Dr. Darshini</strong>Public Health Professional</div></div>
+        <div class="member"><img src="./images/vinuraj.png"><div class="member-details"><strong>Vinuraj</strong>Program Assistant</div></div>
+        <div class="member"><img src="./images/yogesh.png"><div class="member-details"><strong>Yogesh</strong>Field Co-ordinator</div></div>
+        <div class="member"><img src="./images/santosh.png"><div class="member-details"><strong>Santosh</strong>Field Co-ordinator</div></div>
+        <div class="member"><img src="./images/srinivas.png"><div class="member-details"><strong>Srinivas</strong>Field Co-ordinator</div></div>
+      </div>
+      <div class="region-box">
+        <h3>Kodagu</h3>
+        <div class="member"><img src="./images/mamtha.png"><div class="member-details"><strong>Dr. Mamtha</strong>Public Health Professional</div></div>
+        <div class="member"><img src="./images/siddaraju.png"><div class="member-details"><strong>Siddaraju</strong>Field Co-ordinator</div></div>
+        <div class="member"><img src="./images/rakesh.png"><div class="member-details"><strong>Rakesh</strong>Field Co-ordinator</div></div>
+      </div>
     </div>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Akhila</div><div class="person-role">PHP</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Pooja</div><div class="person-role">Program Assistant</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Aiyyappa</div><div class="person-role">Field Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Puttabasaviah</div><div class="person-role">Field Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Venkatesh Murthy</div><div class="person-role">Field Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Darshini</div><div class="person-role">PHP</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Vinuraj</div><div class="person-role">Program Assistant</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Yogesh</div><div class="person-role">Field Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Santosh</div><div class="person-role">Field Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Srinivas</div><div class="person-role">Field Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Mamtha</div><div class="person-role">PHP</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Siddaraju</div><div class="person-role">Field Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Rakesh</div><div class="person-role">Field Co-ordinator</div></div>
-    </div>
+  </div>
   </div>
 
-  <div class="section">
-    <div class="role-header">2. Project Management Team</div>
-    <h2>Public Health Professionals</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Rehan Shahed</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Pradhyumma</div></div>
-    </div>
-    <h2>Project Associate</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">GM Shrishail</div></div>
-    </div>
-    <h2>Program Assistant</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Chandan Adhikari</div></div>
-    </div>
-    <h2>Administrative Assistant</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Tejaswini S B</div></div>
-    </div>
-  </div>
 
-  <div class="section">
-    <div class="role-header">3. Project Execution Team</div>
-    <h2>IEC Activities Team</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Anitha</div></div>
-    </div>
-    <h2>Command Center & Quality Testing Lab</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Sathyanarayana</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prasath</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Ashraf</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Rayees</div></div>
-    </div>
-    <h2>Field Technicians</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prajwal</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Prasanna</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Abhishek</div></div>
-    </div>
-  </div>
 
-  <div class="section">
-    <div class="role-header">4. Project Field Team</div>
-    <h2>Field Ops Manager</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Mr. Nagaraju</div></div>
-    </div>
-    <h2>Mysuru Team</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Akhila</div><div class="person-role">PHP</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Pooja</div><div class="person-role">Program Assistant</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Aiyyappa</div><div class="person-role">Filed Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Puttabasaviah</div><div class="person-role">Filed Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Venkatesh Murthy</div><div class="person-role">Filed Co-ordinator</div></div>
-    </div>
-    <h2>Chamarajanagar Team</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Darshini</div><div class="person-role">PHP</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Vinuraj</div><div class="person-role">Program Assistant</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Yogesh</div><div class="person-role">Filed Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Santosh</div><div class="person-role">Filed Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Srinivas</div><div class="person-role">Filed Co-ordinator</div></div>
-    </div>
-    <h2>Kodagu Team</h2>
-    <div class="team-grid">
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Dr. Mamtha</div><div class="person-role">PHP</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Siddaraju</div><div class="person-role">Filed Co-ordinator</div></div>
-      <div class="person-card"><img src="https://via.placeholder.com/70"><div class="person-name">Rakesh</div><div class="person-role">Filed Co-ordinator</div></div>
-    </div>
-  </div>
+  
             
             <section class="partners-section">
                 <h2>Our Partner Organizations</h2>
@@ -524,14 +553,8 @@ box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Project CHAnDAnA. All Rights Reserved.</p>
-                <p>This website is maintained by the Department of Health and Family Welfare, Government of Karnataka</p>
-                <div class="footer-links">
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Copyright Policy</a>
-                    <a href="#">Hyperlinking Policy</a>
-                    <a href="#">Accessibility Statement</a>
-                </div>
+                <p></p>
+                
             </div>
         </div>
     </footer>

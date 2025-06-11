@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--text-heading);
+    /* color: var(--text-heading); */
 }
 
 a {
@@ -119,8 +119,8 @@ img {
 }
 
 .btn-outline {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
     background-color: transparent;
 }
 
@@ -665,6 +665,7 @@ color: var(--primary-color);
 .district-card h3 {
     text-align: center;
     padding: 15px;
+    color: #000;
 }
 
 /* Timeline Styles */
@@ -1060,4 +1061,25 @@ table tr:nth-child(even) {
 
 i.fas.fa-phone-alt.m-2 {
     margin: 5px 10px 5px 4px;
+}
+
+
+
+
+i.fas.fa-phone-alt {
+    margin: 7px 10px 7px 0px;
+}
+
+.footer-section h3{
+    color: #fff;
+}
+
+.activities-intro,.team-intro,.vision-section    {
+ margin-bottom: 1rem
+}
+   
+
+
+.about-image {
+    margin: 10px;
 }

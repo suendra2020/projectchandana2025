@@ -110,6 +110,66 @@
             justify-content: flex-end;
             gap: 10px;
         }
+
+
+        /* reports section*/
+         .report-section {
+         background: #fdfdfd;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* max-width: 1000px; */
+    margin: auto;
+    margin: 20px -6px;
+    }
+    .report-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .report-box {
+      flex: 1 1 200px;
+      min-width: 180px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      position: relative;
+      border:1px solid #e3e3e3
+    }
+    .report-box .icon {
+     font-size: 30px;
+    margin-bottom: 10px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 12px;
+    padding: 3px 8px;
+    border: 1px solid #ccc;
+    }
+    .report-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: #000
+    }
+    .report-box p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .report-box .change {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #008000;
+    }
+    .bg-red { background-color: #ffe5e7; }
+    .bg-orange { background-color: #fff3d9; }
+    .bg-green { background-color: #e0fae3; }
+    .bg-purple { background-color: #f0eaff; }
+
+    @media (max-width: 600px) {
+      .report-box h3 { font-size: 1.4rem; }
+    }
     </style>
 <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -196,6 +256,41 @@
     <!-- Main Content -->
     <main id="main-content">
         <div class="container">
+              <div class="report-section">
+    <h1>Reports</h1>
+    <h2>Screening Statistics</h2>
+    <p style="margin-bottom: 20px; color: #666;">Number of tests conducted, locations covered</p>
+
+    <div class="report-grid">
+      <div class="report-box bg-red">
+        <div class="icon">🔒</div>
+        <h3 id="count1">0</h3>
+        <p>Total Test</p>
+        <div class="change">+8%</div>
+      </div>
+
+      <div class="report-box bg-orange">
+        <div class="icon">📋</div>
+        <h3 id="count2">0</h3>
+        <p>Status Test</p>
+        <div class="change">+5%</div>
+      </div>
+
+      <div class="report-box bg-green">
+        <div class="icon">🧭</div>
+        <h3 id="count3">0</h3>
+        <p>Total Locations</p>
+        <div class="change">+1.2%</div>
+      </div>
+
+      <div class="report-box bg-purple">
+        <div class="icon">👥</div>
+        <h3 id="count4">0</h3>
+        <p>Location Covered</p>
+        <div class="change">0.5%</div>
+      </div>
+    </div>
+  </div>
             <h1 class="page-title">Reports & Publications</h1>
             
             <section class="reports-intro">
@@ -253,16 +348,16 @@
                                 </div>
                                 <h3>Annual Progress Report 2024</h3>
                                 <p>Comprehensive overview of Project CHAnDAnA's activities, achievements, and impact during the year 2024. Includes detailed statistics on screening, treatment, and awareness programs.</p>
-                                <div class="report-actions">
+                                <!--  <div class="report-actions">
                                     <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
                                     <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-                                </div>
+                                </div> --> 
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4 p-2">
                         <div class="report-card">
-                            <img src="images/reports.png" alt="Prevalence Study: Mysuru District" class="report-image">
+                            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRQIWZotxRbQst2YNqs_7QDQvDKkh1fUCXSA&s" alt="Prevalence Study: Mysuru District" class="report-image"> -->
                             <div class="report-content">
                                 <div class="report-meta">
                                     <span><i class="fas fa-calendar-alt"></i> December 2024</span>
@@ -270,16 +365,16 @@
                                 </div>
                                 <h3>Prevalence Study: Mysuru District</h3>
                                 <p>Research paper on the prevalence of Sickle Cell Anemia in tribal populations of Mysuru district. Includes demographic analysis, risk factors, and recommendations for intervention.</p>
-                                <div class="report-actions">
+                                <!-- <div class="report-actions">
                                     <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
                                     <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4 p-2">
                         <div class="report-card">
-                            <img src="images/reports.png" alt="HPOS Technology: Impact Assessment" class="report-image">
+                            <!-- <img src="images/reports.png" alt="HPOS Technology: Impact Assessment" class="report-image"> -->
                             <div class="report-content">
                                 <div class="report-meta">
                                     <span><i class="fas fa-calendar-alt"></i> October 2024</span>
@@ -287,10 +382,10 @@
                                 </div>
                                 <h3>HPOS Technology: Impact Assessment</h3>
                                 <p>Evaluation of the effectiveness of the HPOS device for rapid diagnosis of Sickle Cell Anemia in field settings. Includes comparison with traditional diagnostic methods.</p>
-                                <div class="report-actions">
+                                <!-- <div class="report-actions">
                                     <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
                                     <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -298,7 +393,7 @@
                 <div class="row">
                     <div class="col-md-4 mb-4 p-2">
                         <div class="report-card">
-                            <img src="images/reports.png" alt="Community Awareness Impact Study" class="report-image">
+                            <!-- <img src="https://media.licdn.com/dms/image/v2/D4E12AQGa18YLH2wJfg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1710273217446?e=2147483647&v=beta&t=2RJeGjqX1ESUQ2ZLiNqJmhHpRBJcH7tzgFrACBxa6Xg" alt="Community Awareness Impact Study" class="report-image"> -->
                             <div class="report-content">
                                 <div class="report-meta">
                                     <span><i class="fas fa-calendar-alt"></i> August 2024</span>
@@ -306,16 +401,16 @@
                                 </div>
                                 <h3>Community Awareness Impact Study</h3>
                                 <p>Analysis of the effectiveness of community awareness programs in increasing knowledge about Sickle Cell Anemia and promoting early screening.</p>
-                                <div class="report-actions">
+                                <!-- <div class="report-actions">
                                     <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
                                     <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4 p-2">
                         <div class="report-card">
-                            <img src="images/reports.png" alt="Healthcare Worker Training Evaluation" class="report-image">
+                            <!-- <img src="https://nurseslabs.com/wp-content/uploads/2016/12/Sickle-Cell-Anemia.png" alt="Healthcare Worker Training Evaluation" class="report-image"> -->
                             <div class="report-content">
                                 <div class="report-meta">
                                     <span><i class="fas fa-calendar-alt"></i> June 2024</span>
@@ -323,16 +418,16 @@
                                 </div>
                                 <h3>Healthcare Worker Training Evaluation</h3>
                                 <p>Assessment of the effectiveness of training programs for healthcare workers in improving their knowledge and skills related to Sickle Cell Anemia management.</p>
-                                <div class="report-actions">
+                                <!-- <div class="report-actions">
                                     <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
                                     <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4 p-2">
                         <div class="report-card">
-                            <img src="images/reports.png" alt="Policy Brief: Sickle Cell Anemia in Karnataka" class="report-image">
+                            <!-- <img src="images/reports.png" alt="Policy Brief: Sickle Cell Anemia in Karnataka" class="report-image"> -->
                             <div class="report-content">
                                 <div class="report-meta">
                                     <span><i class="fas fa-calendar-alt"></i> April 2024</span>
@@ -340,35 +435,17 @@
                                 </div>
                                 <h3>Policy Brief: Sickle Cell Anemia in Karnataka</h3>
                                 <p>Recommendations for policy interventions to address Sickle Cell Anemia in Karnataka, based on Project CHAnDAnA's findings and experiences.</p>
-                                <div class="report-actions">
+                                <!-- <div class="report-actions">
                                     <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View</a>
                                     <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <section class="pagination-section">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </section>
+       
             
             <section class="partners-section">
                 <h2>Our Research Partners</h2>
@@ -415,18 +492,32 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Project CHAnDAnA. All Rights Reserved.</p>
-                <p>This website is maintained by the Department of Health and Family Welfare, Government of Karnataka</p>
-                <div class="footer-links">
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Copyright Policy</a>
-                    <a href="#">Hyperlinking Policy</a>
-                    <a href="#">Accessibility Statement</a>
-                </div>
+                <p></p>
+                
             </div>
         </div>
     </footer>
 
     <script src="js/accessibility.js"></script>
+     <script>
+    function animateCount(id, end, duration) {
+      let start = 0;
+      let step = Math.ceil(duration / end);
+      let el = document.getElementById(id);
+      let timer = setInterval(() => {
+        start += 1;
+        el.textContent = start;
+        if (start >= end) clearInterval(timer);
+      }, step);
+    }
+
+    window.onload = () => {
+      animateCount("count1", 4567, 1000);
+      animateCount("count2", 3245, 1000);
+      animateCount("count3", 5, 500);
+      animateCount("count4", 2, 500);
+    };
+  </script>
 </body>
 </html>
+

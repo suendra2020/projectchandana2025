@@ -156,6 +156,7 @@
     .report-box p {
       font-size: 0.95rem;
       color: #555;
+      text-align: center;
     }
     .report-box .change {
       margin-top: 8px;
@@ -210,11 +211,7 @@
                     </div>
                 </div>
                 <div class="header-right">
-                    <div class="search-bar">
-                        <label for="search" class="visually-hidden">Search</label>
-                        <input type="text" id="search" placeholder="Search..." aria-label="Search">
-                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
-                    </div>
+                    
                     <div class="helpline">
                         <a href="tel:08022358910" aria-label="Call helpline">
                             <i class="fas fa-phone-alt"></i>
@@ -265,29 +262,29 @@
       <div class="report-box bg-red">
         <div class="icon">🔒</div>
         <h3 id="count1">0</h3>
-        <p>Total Test</p>
-        <div class="change">+8%</div>
+        <p>Total Screenings Tests Completed</p>
+        <!-- <div class="change">+8%</div> -->
       </div>
 
       <div class="report-box bg-orange">
         <div class="icon">📋</div>
         <h3 id="count2">0</h3>
-        <p>Status Test</p>
-        <div class="change">+5%</div>
+        <p>Awareness Activities Performed</p>
+        <!-- <div class="change">+5%</div> -->
       </div>
 
       <div class="report-box bg-green">
         <div class="icon">🧭</div>
         <h3 id="count3">0</h3>
-        <p>Total Locations</p>
-        <div class="change">+1.2%</div>
+        <p>Sickle Cell Disease Cases</p>
+        <!-- <div class="change">+1.2%</div> -->
       </div>
 
       <div class="report-box bg-purple">
         <div class="icon">👥</div>
-        <h3 id="count4">0</h3>
-        <p>Location Covered</p>
-        <div class="change">0.5%</div>
+        <h3 id="count4">80.27%</h3>
+        <p>Target Achieved Using HPOS</p>
+        <!-- <div class="change">80.27%</div> -->
       </div>
     </div>
   </div>
@@ -451,16 +448,16 @@
                 <h2>Our Research Partners</h2>
                 <div class="partners-logo-container">
                     <div class="partner-logo">
-                        <img src="images/nsa.svg" alt="National Sickle Cell Anemia Elimination Mission">
+                        <img src="images/healthmission.png" alt="National Sickle Cell Anemia Elimination Mission">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/karnataka-logo.png" alt="Government of Karnataka">
+                        <img src="images/karnatka.png" alt="Government of Karnataka">
                     </div>
                     <div class="partner-logo">
                         <img src="images/indianoil-logo.png" alt="IndianOil Aarogyam">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/iisc-logo.png" alt="Indian Institute of Science">
+                        <img src="images/isim.png" alt="Indian Institute of Science">
                     </div>
                 </div>
             </section>
@@ -500,22 +497,39 @@
 
     <script src="js/accessibility.js"></script>
      <script>
-    function animateCount(id, end, duration) {
-      let start = 0;
-      let step = Math.ceil(duration / end);
-      let el = document.getElementById(id);
-      let timer = setInterval(() => {
-        start += 1;
-        el.textContent = start;
-        if (start >= end) clearInterval(timer);
-      }, step);
+    function animateCount(id, end, duration, isPercentage = false) {
+      const el = document.getElementById(id);
+      const startTime = performance.now();
+      const isFloat = end % 1 !== 0;
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = end * progress;
+
+        if (isPercentage) {
+          el.textContent = currentValue.toFixed(2) + '%';
+        } else {
+          el.textContent = Math.floor(currentValue).toLocaleString();
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      if (duration <= 0) {
+        el.textContent = isPercentage ? end.toFixed(2) + '%' : Math.floor(end).toLocaleString();
+      } else {
+        requestAnimationFrame(update);
+      }
     }
 
     window.onload = () => {
-      animateCount("count1", 4567, 1000);
-      animateCount("count2", 3245, 1000);
-      animateCount("count3", 5, 500);
-      animateCount("count4", 2, 500);
+      animateCount("count1", 198737, 1000);
+      animateCount("count2", 75, 500);
+      animateCount("count3", 1275, 500);
+     animateCount("count4", 80.02, 2000, true);
     };
   </script>
 </body>

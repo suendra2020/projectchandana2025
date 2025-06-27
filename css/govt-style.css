@@ -935,16 +935,32 @@ table tr:nth-child(even) {
     }
 }
 
+
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
+                display: block;
+        position: absolute;
+        right: 16px;
+        top: 63px;
     }
-    
+    .header-main{
+        display: flex;
+        align-items: flex-start;
+    }
+    .logo-text{
+        text-align: left;
+    }
+      .logo-text p{
+display: none;
+      }
+      .mobile-header{
+        max-width: 100%;
+      }
     nav .container {
         padding: 0;
     }
     
-    .main-menu {
+    .main-menu,.search-bar,.helpline,.top-bar-right {
         flex-direction: column;
         display: none;
     }
